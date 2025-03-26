@@ -1,0 +1,26 @@
+Roles
+Admin
+->Register Student**
+->Register Teachers**
+->Register Class**
+->student view
+->Edit Students
+->print id
+->Management Payment
+->Mark Attendance
+->Class View
+->edit Class
+->Assing Class?
+->Upload LMS
+
+
+Student
+->Edit Student Details
+->View Class -> LMS
+->upload Payment
+
+Teacher
+->Edit Tracher Details
+->Upload LMS
+->View Payment Records
+->View Class

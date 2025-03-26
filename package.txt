@@ -1,0 +1,2 @@
+composer require guzzlehttp/guzzle   or
+composer require guzzlehttp/guzzle --with-all-dependencies
