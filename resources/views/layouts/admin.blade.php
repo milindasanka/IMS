@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Laravel SB Admin 2">
     <meta name="author" content="Alejandro RH">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <title>{{ config('app.name', 'CMS') }}</title>
+
+    <title>{{ config('app.name', 'IMS') }}</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <!-- Fonts -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -67,22 +73,22 @@
                 <span>{{ __('Users') }}</span>
             </a>
         </li>
-        <li class="nav-item {{ Nav::isRoute('Admin.Student_Register') }}">
-            <a class="nav-link" href="{{ route('Admin.Student_Register') }}">
+        <li class="nav-item {{ Nav::isRoute('Admin.student-list') }}">
+            <a class="nav-link" href="{{ route('Admin.student-list') }}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>{{ __('Student Register') }}</span>
+                <span>{{ __('Students List') }}</span>
             </a>
         </li>
-        <li class="nav-item {{ Nav::isRoute('Admin.Class_Register') }}">
-            <a class="nav-link" href="{{ route('Admin.Class_Register') }}">
+        <li class="nav-item {{ Nav::isRoute('Admin.clases-list') }}">
+            <a class="nav-link" href="{{ route('Admin.clases-list') }}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>{{ __('Class Register') }}</span>
+                <span>{{ __('Clases List') }}</span>
             </a>
         </li>
-        <li class="nav-item {{ Nav::isRoute('Admin.Teacher_Register') }}">
-            <a class="nav-link" href="{{ route('Admin.Teacher_Register') }}">
+        <li class="nav-item {{ Nav::isRoute('Admin.teachers-list') }}">
+            <a class="nav-link" href="{{ route('Admin.teachers-list') }}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>{{ __('Teacher Register') }}</span>
+                <span>{{ __('Teachers List') }}</span>
             </a>
         </li>
 
@@ -227,5 +233,12 @@
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- DataTables JS -->
+
 </body>
 </html>

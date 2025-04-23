@@ -50,12 +50,13 @@ Route::get('/Class_Register', [AdminController::class, 'Class_Register'])->name(
 Route::post('/Class_Register', [AdminController::class, 'saveClass_Register'])->name('Admin.saveClass_Register');
 Route::get('/Teacher_Register', [AdminController::class, 'Teacher_Register'])->name('Admin.Teacher_Register');
 Route::post('/Teacher_Register', [AdminController::class, 'saveTeacher_Register'])->name('Admin.saveTeacher_Register');
-
 Route::post('/getclass', [AdminController::class, 'getclass'])->name('Admin.getclass');
-Route::get('/student-list', 'StudentController@students');
+
+Route::get('/student-list', 'StudentController@index')->name('Admin.student-list');
+Route::get('/clases-list', 'StudentController@clases')->name('Admin.clases-list');
+Route::get('/teachers-list', 'StudentController@teachers')->name('Admin.teachers-list');
 
 
-Route::get('/students', [StudentController::class, 'index'])->name('Admin.students');
 
 
 
