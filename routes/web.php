@@ -55,7 +55,10 @@ Route::post('/getclass', [AdminController::class, 'getclass'])->name('Admin.getc
 Route::get('/student-list', 'StudentController@index')->name('Admin.student-list');
 Route::get('/clases-list', 'StudentController@clases')->name('Admin.clases-list');
 Route::get('/teachers-list', 'StudentController@teachers')->name('Admin.teachers-list');
+Route::get('/clases-view/{id}', 'StudentController@classview')->name('Admin.clases-view');
 
+Route::post('class_view/addtute', [StudentController::class, 'tutestore'])->name('tute.store');
+Route::delete('/deletetute/{id}', [StudentController::class, 'destroy'])->name('tute.destroy');
 
 
 

@@ -36,6 +36,7 @@
                                 <th>Address</th>
                                 <th>Contact</th>
                                 <th>Email</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,6 +47,10 @@
                                     <td>{{ $st->address }}</td>
                                     <td>{{ $st->cnumber }}</td>
                                     <td>{{$st->email}}</td>
+                                    <td>
+                                        <a href=""><button class="btn btn-github">Edite</button></a>
+                                        <a href=""><button class="btn btn-info">View</button></a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

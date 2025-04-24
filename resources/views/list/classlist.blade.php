@@ -36,6 +36,7 @@
                                 <th>Fee</th>
                                 <th>Stream</th>
                                 <th>Type</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,6 +47,11 @@
                                     <td>{{ $st->fee }}</td>
                                     <td>{{ $st->stream }}</td>
                                     <td>{{$st->type}}</td>
+                                    <td>
+                                        <a href=""><button class="btn btn-github">Edite</button></a>
+                                        <a href=""><button class="btn btn-success">Attendance</button></a>
+                                        <a href="/clases-view/{{$st->id}}"><button class="btn btn-info">View</button></a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

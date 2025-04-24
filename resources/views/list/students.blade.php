@@ -35,7 +35,7 @@
                                 <th>Email</th>
                                 <th>NIC</th>
                                 <th>Stream</th>
-                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,11 +46,8 @@
                                     <td>{{ $st->nic }}</td>
                                     <td>{{ $st->stream }}</td>
                                     <td>
-                                        @if($st->status === 1)
-                                            <span class="badge bg-success text-white">Active</span>
-                                        @else
-                                            <span class="badge bg-danger text-white">Inactive</span>
-                                        @endif
+                                        <a href=""><button class="btn btn-github">Edite</button></a>
+                                        <a href=""><button class="btn btn-info">View</button></a>
                                     </td>
                                 </tr>
                             @endforeach
