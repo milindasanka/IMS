@@ -129,4 +129,21 @@ class StudentController extends Controller
         return redirect()->route('Admin.student-list')->with('success', 'delete successfully.');
     }
 
+    public function classedite($id)
+    {
+        $class = Classes::where('id',$id)->first();
+        return view ('list.classedite',['class'=>$class]);
+    }
+
+    public function classupdate(Request $request)
+    {
+        $class = Classes::findOrFail($request->id);
+
+        $class->update([
+            'fee' => $request->fee,
+            'status' => $request->status,
+        ]);
+
+        return redirect()->back()->with('success', 'Class updated successfully!');
+    }
 }

@@ -63,6 +63,9 @@ Route::post('/addclassstr',[StudentController::class, 'addclassstr']);
 
 
 Route::post('class_view/addtute', [StudentController::class, 'tutestore'])->name('tute.store');
+Route::get('classedite/{id}', [StudentController::class, 'classedite'])->name('classedite');
+Route::put('/classupdate', [StudentController::class, 'classupdate'])->name('class.update');
+
 Route::delete('/deletetute/{id}', [StudentController::class, 'destroy'])->name('tute.destroy');
 Route::get('/deletestudent/{id}', [StudentController::class, 'stxdestroy'])->name('tute.destroy');
 
