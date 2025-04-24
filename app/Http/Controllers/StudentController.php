@@ -9,6 +9,7 @@ use App\Models\StudentClass;
 use App\Models\Teacher;
 use App\Models\Tute;
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Spatie\Permission\Models\Role;
 
 class StudentController extends Controller
@@ -69,6 +70,63 @@ class StudentController extends Controller
         $tute->delete();
 
         return back()->with('success', 'Tute deleted successfully.');
+    }
+
+    public function student($id)
+    {
+        $student = Student::where('id',$id)->first();
+        $qr = QrCode::size(200)->generate($id);
+        $class = Classes::get();
+        $stclass = StudentClass::where('student_id', $id)->pluck('class_id');
+        $stclasslist = Classes::whereIn('id', $stclass)->get();
+
+        return view('list.student',['student'=>$student,'class'=>$class,'stclasslist'=>$stclasslist],compact('qr'));
+    }
+
+    public function updateStudent(Request $request)
+    {
+        $student = Student::where('id', $request->input('id'))->first();
+        $student->name        = $request->input('name');
+        $student->nic         = $request->input('nic');
+        $student->cnumber     = $request->input('phone_no');
+        $student->homenumber  = $request->input('home_no');
+        $student->address     = $request->input('address');
+        $student->save();
+
+        return redirect()->back()->with('success', 'Student information updated successfully.');
+    }
+
+    public function stdestroy(Request $request, $id)
+    {
+        StudentClass::where('class_id', $id)
+            ->where('student_id', $request->student_id)
+            ->delete();
+        return redirect()->back()->with('success', 'delete successfully.');
+    }
+
+    public function addclassstr(Request $request)
+    {
+        $exists = StudentClass::where('student_id', $request->id)
+            ->where('class_id', $request->class)
+            ->exists();
+
+        if ($exists) {
+            return redirect()->back()->with('error', 'This class is already assigned to the student.');
+        }
+
+        $stclass = new StudentClass();
+        $stclass->student_id = $request->id;
+        $stclass->class_id = $request->class;
+        $stclass->save();
+
+        return redirect()->back()->with('success', 'Added successfully.');
+    }
+
+    public function stxdestroy($id)
+    {
+        Student::where('id', $id)
+            ->delete();
+        return redirect()->route('Admin.student-list')->with('success', 'delete successfully.');
     }
 
 }

@@ -46,8 +46,7 @@
                                     <td>{{ $st->nic }}</td>
                                     <td>{{ $st->stream }}</td>
                                     <td>
-                                        <a href=""><button class="btn btn-github">Edite</button></a>
-                                        <a href=""><button class="btn btn-info">View</button></a>
+                                        <a href="/student-view/{{$st->id}}"><button class="btn btn-github">View</button></a>
                                     </td>
                                 </tr>
                             @endforeach
