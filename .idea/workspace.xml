@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b210fd0-3ddd-4eed-be44-e720fa346da0" name="Changes" comment="IMS" />
+    <list default="true" id="60610534-2163-4d95-89bd-8d46314eee14" name="Changes" comment="tute">
+      <change afterPath="$PROJECT_DIR$/resources/views/attendance.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.txt" beforeDir="false" afterPath="$PROJECT_DIR$/package.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/list/class.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/list/class.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/list/classlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/list/classlist.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/step.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,11 +26,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="KEEP" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;milindasanka&quot;
+    &quot;assignee&quot;: &quot;ChamaraEw&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
@@ -146,13 +157,15 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/vendor/simplesoftwareio/simple-qrcode" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2ucMmwrsyr9cy0YzH8PSdol2z7V" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2w5C5edS5smFqlERtzf669M8f1b" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -163,7 +176,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IMS&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/NCRM/CHM&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -172,6 +185,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -182,57 +201,100 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1b210fd0-3ddd-4eed-be44-e720fa346da0" name="Changes" comment="" />
-      <created>1742543572026</created>
+      <changelist id="60610534-2163-4d95-89bd-8d46314eee14" name="Changes" comment="" />
+      <created>1745321865687</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1742543572026</updated>
-      <workItem from="1742543573324" duration="62000" />
-      <workItem from="1742543637769" duration="109000" />
-      <workItem from="1742543749420" duration="42000" />
-      <workItem from="1742543799324" duration="63000" />
-      <workItem from="1742543974586" duration="12534000" />
-      <workItem from="1742796122354" duration="17846000" />
-      <workItem from="1742888288923" duration="4758000" />
-      <workItem from="1742893952873" duration="8333000" />
-      <workItem from="1742962788785" duration="202000" />
-      <workItem from="1742963011921" duration="220000" />
+      <updated>1745321865687</updated>
+      <workItem from="1745321866902" duration="1399000" />
+      <workItem from="1745383487361" duration="2722000" />
+      <workItem from="1745392990747" duration="13894000" />
+      <workItem from="1745464140375" duration="395000" />
+      <workItem from="1745480646303" duration="805000" />
+      <workItem from="1745551114481" duration="50000" />
+      <workItem from="1745560248493" duration="6592000" />
+      <workItem from="1745567497846" duration="10355000" />
     </task>
-    <task id="LOCAL-00001" summary="IMS">
+    <task id="LOCAL-00001" summary="list">
       <option name="closed" value="true" />
-      <created>1742544032910</created>
+      <created>1745385192689</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1742544032910</updated>
+      <updated>1745385192689</updated>
     </task>
-    <task id="LOCAL-00002" summary="IMS">
+    <task id="LOCAL-00002" summary="class view">
       <option name="closed" value="true" />
-      <created>1742963087215</created>
+      <created>1745488477332</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1742963087215</updated>
+      <updated>1745488477332</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="class view">
+      <option name="closed" value="true" />
+      <created>1745488566583</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745488566583</updated>
+    </task>
+    <task id="LOCAL-00004" summary="student view">
+      <option name="closed" value="true" />
+      <created>1745494564087</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745494564087</updated>
+    </task>
+    <task id="LOCAL-00005" summary="class edit">
+      <option name="closed" value="true" />
+      <created>1745496001020</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745496001020</updated>
+    </task>
+    <task id="LOCAL-00006" summary="teacher edit">
+      <option name="closed" value="true" />
+      <created>1745567436025</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745567436025</updated>
+    </task>
+    <task id="LOCAL-00007" summary="tute">
+      <option name="closed" value="true" />
+      <created>1745567769537</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745567769537</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="IMS" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMS" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/home.blade.php</url>
-          <line>42</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="list" />
+    <MESSAGE value="class view" />
+    <MESSAGE value="student view" />
+    <MESSAGE value="class edit" />
+    <MESSAGE value="teacher edit" />
+    <MESSAGE value="tute" />
+    <option name="LAST_COMMIT_MESSAGE" value="tute" />
   </component>
 </project>

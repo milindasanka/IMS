@@ -162,11 +162,11 @@
                             <td>{{$llis->name}}</td>
                             <td>{{$llis->cnumber}}</td>
                             <td>{{$llis->homenumber}}</td>
-                            <td>85%</td>
+                            <td>{{\App\Models\Attendance::where('student_id', $llis->id)->where('class_id', $class->id)->where('month', now()->month)->count()}}</td>
                             @if(\App\Models\Payemnt::where('student_id', $llis->id)->exists())
-                                <td class="bg-success">NOT PAID</td>
+                                <td class="bg-success">PAID</td>
                             @else
-                                <td class="bg-secondary">PAID</td>
+                                <td class="bg-secondary">NOT PAID</td>
                             @endif
                         </tr>
                         @endforeach

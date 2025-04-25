@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attendance;
 use App\Models\Classes;
 use App\Models\Payemnt;
 use App\Models\Student;
@@ -160,7 +161,7 @@ class StudentController extends Controller
             ->leftJoin('studentclass', 'classes.id', '=', 'studentclass.class_id')
             ->leftJoin('payemnt', function($join) {
                 $join->on('classes.id', '=', 'payemnt.class_id')
-                    ->where('payemnt.month', '=', now()->month); // Current month payments
+                    ->where('payemnt.month', '=', now()->month);
             })
             ->where('classes.teacher', $id) // Filter by teacher
             ->groupBy('classes.id', 'classes.class_name', 'classes.fee')
@@ -180,6 +181,60 @@ class StudentController extends Controller
             'address' => $request->address,
         ]);
         return redirect()->back()->with('success', 'Class updated successfully!');
+    }
+
+    public function attendance($id)
+    {
+        $subject = Classes::where('id',$id)->first();
+        return view('attendance',['id'=>$id,'subject'=>$subject]);
+    }
+
+    public function getDetailsstu(Request $request)
+    {
+        $regNo = $request->input('reg_no');
+        $class_id = $request->input('class_id');
+        $student = Student::where('id',$regNo)->first();
+        if($student===null){
+            return response()->json(['reg_no' => 0,]);
+
+        }
+        if(Payemnt::where('student_id',$regNo)->where('month',now()->month)->where('class_id',$class_id)->exists())
+        {
+            $pay = 1;
+        }else{
+            $pay = 0;
+        }
+        return response()->json([
+            'reg_no' => $regNo,
+            'name' => $student->name,
+            'pay' => $pay,
+        ]);
+    }
+
+    public function attend(Request $request)
+    {
+        $attend = new Attendance();
+        $attend->student_id = $request->reg_no;
+        $attend->class_id = $request->cid;
+        $attend->month = now()->month;
+        $attend->save();
+        return redirect()->back()->with('success', 'successfully!');
+    }
+
+    public function pay(Request $request)
+    {
+        $attend = new Attendance();
+        $attend->student_id = $request->reg_no;
+        $attend->class_id = $request->cid;
+        $attend->month = now()->month;
+
+        $pay = new Payemnt();
+        $pay->student_id = $request->reg_no;
+        $pay->class_id = $request->cid;
+        $pay->month = now()->month;
+        $attend->save();
+        $pay->save();
+        return redirect()->back()->with('success', 'successfully!');
     }
 }
 

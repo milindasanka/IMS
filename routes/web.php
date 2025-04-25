@@ -71,6 +71,11 @@ Route::delete('/deletetute/{id}', [StudentController::class, 'destroy'])->name('
 Route::get('/deletestudent/{id}', [StudentController::class, 'stxdestroy'])->name('tute.destroy');
 
 Route::get('/teacher-view/{id}', 'StudentController@teacher')->name('Admin.teacher-view');
+Route::get('/attendance/{id}', 'StudentController@attendance')->name('Admin.attendance');
+Route::post('/getDetailsstu', [StudentController::class, 'getDetailsstu'])->name('get.detailstu');
+
+Route::post('/attend', [StudentController::class, 'attend'])->name('get.attend');
+Route::post('/pay', [StudentController::class, 'pay'])->name('get.pay');
 
 
 
