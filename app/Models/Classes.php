@@ -14,5 +14,13 @@ class Classes extends Model
         'status',
     ];
 
+    public function students()
+    {
+        return $this->hasMany(StudentClass::class, 'class_id');
+    }
 
+    public function payments()
+    {
+        return $this->hasMany(Payemnt::class, 'class_id');
+    }
 }

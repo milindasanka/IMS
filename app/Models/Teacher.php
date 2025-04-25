@@ -9,4 +9,10 @@ class Teacher extends Model
 {
     use HasFactory;
     protected $table = 'teachers';
+    protected $fillable = [
+        'name',
+        'nic',
+        'cnumber',
+        'address',
+    ];
 }

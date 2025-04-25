@@ -9,6 +9,7 @@ use App\Models\StudentClass;
 use App\Models\Teacher;
 use App\Models\Tute;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Spatie\Permission\Models\Role;
 
@@ -146,4 +147,40 @@ class StudentController extends Controller
 
         return redirect()->back()->with('success', 'Class updated successfully!');
     }
+
+    public function teacher($id)
+    {
+        $class = DB::table('classes')
+            ->select([
+                'classes.class_name','classes.id',
+                'classes.fee as class_fee',
+                DB::raw('COUNT(DISTINCT studentclass.student_id) as student_count'),
+                DB::raw('COUNT(DISTINCT payemnt.student_id) as paid_student_count')
+            ])
+            ->leftJoin('studentclass', 'classes.id', '=', 'studentclass.class_id')
+            ->leftJoin('payemnt', function($join) {
+                $join->on('classes.id', '=', 'payemnt.class_id')
+                    ->where('payemnt.month', '=', now()->month); // Current month payments
+            })
+            ->where('classes.teacher', $id) // Filter by teacher
+            ->groupBy('classes.id', 'classes.class_name', 'classes.fee')
+            ->get();
+
+        $teacher = Teacher::where('id',$id)->first();
+        return view('list.teacher',['teacher'=>$teacher,'class'=>$class]);
+    }
+
+    public function update_teacher(Request $request)
+    {
+        $class = Teacher::findOrFail($request->id);
+        $class->update([
+            'name' => $request->name,
+            'nic' => $request->nic,
+            'cnumber' => $request->phone_no,
+            'address' => $request->address,
+        ]);
+        return redirect()->back()->with('success', 'Class updated successfully!');
+    }
 }
+
+
