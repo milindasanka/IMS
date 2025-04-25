@@ -56,6 +56,13 @@
                 <span>{{ __('Dashboard') }}</span></a>
         </li>
 
+        @can('teacher')
+        <li class="nav-item {{ Nav::isRoute('teacher.clases-list') }}">
+            <a class="nav-link" href="{{ route('teacher.clases-list') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>{{ __('Your Class') }}</span></a>
+        </li>
+        @endcan
         <!-- Divider -->
 
 

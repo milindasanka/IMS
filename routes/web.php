@@ -76,6 +76,7 @@ Route::post('/getDetailsstu', [StudentController::class, 'getDetailsstu'])->name
 
 Route::post('/attend', [StudentController::class, 'attend'])->name('get.attend');
 Route::post('/pay', [StudentController::class, 'pay'])->name('get.pay');
+Route::get('/tclases-list', 'StudentController@tclases')->name('teacher.clases-list');
 
 
 

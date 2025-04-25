@@ -236,6 +236,13 @@ class StudentController extends Controller
         $pay->save();
         return redirect()->back()->with('success', 'successfully!');
     }
+
+    public function tclases()
+    {
+        $teacher = Teacher::where('email',auth()->user()->email)->first('id');
+        $clases = Classes::where('teacher',$teacher->id)->get();
+        return view('teacher.classlist', ['classlist' => $clases]);
+    }
 }
 
 
