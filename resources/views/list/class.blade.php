@@ -106,7 +106,7 @@
             <div class="col-12 mb-4">
                 <div class="card border-left-dark shadow h-100 py-3 px-3">
                     <h6 class="text-uppercase text-dark font-weight-bold mb-3">Tutes List</h6>
-                    <table class="table table-bordered table-hover">
+                    <table class="table table-bordered table-hover" id="tutexx">
                         <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
@@ -144,7 +144,7 @@
             <div class="col-12 mb-4">
                 <div class="card border-left-dark shadow h-100 py-3 px-3">
                     <h6 class="text-uppercase text-dark font-weight-bold mb-3">Student List</h6>
-                    <table class="table table-bordered table-hover">
+                    <table class="table table-bordered table-hover" id="student">
                         <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
@@ -176,4 +176,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#student').DataTable();
+        });
+
+        $(document).ready(function() {
+            $('#tutexx').DataTable();
+        });
+    </script>
 @endsection
+
