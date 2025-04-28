@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classes;
+use App\Models\Student;
+use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,13 +27,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::count();
+        $student = Student::count();
+        $class = Classes::count();
+        $teachers = Teacher::count();
 
+        $list = Classes::get();
         $widget = [
-            'users' => $users,
-            //...
+            'students' => $student,
+            'class' => $class,
+            'teachers' => $teachers,
         ];
 
-        return view('home', compact('widget'));
+        return view('home', compact('widget'),['list'=>$list]);
     }
 }

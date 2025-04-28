@@ -56,11 +56,13 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
+        @can('manage users')
         <li class="nav-item {{ Nav::isRoute('home') }}">
             <a class="nav-link" href="{{ route('home') }}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>{{ __('Dashboard') }}</span></a>
         </li>
+        @endcan
 
         @can('teacher')
         <li class="nav-item {{ Nav::isRoute('teacher.clases-list') }}">

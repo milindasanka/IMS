@@ -18,8 +18,9 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
+
 
 Auth::routes(['verify' => true]);
 
