@@ -44,6 +44,12 @@
             @can('manage users')
             <div class="sidebar-brand-text mx-3">Admin</div>
             @endcan
+            @can('teacher')
+                <div class="sidebar-brand-text mx-3">Teacher</div>
+            @endcan
+            @can('student')
+                <div class="sidebar-brand-text mx-3">Student</div>
+            @endcan
         </a>
 
         <!-- Divider -->
@@ -59,6 +65,14 @@
         @can('teacher')
         <li class="nav-item {{ Nav::isRoute('teacher.clases-list') }}">
             <a class="nav-link" href="{{ route('teacher.clases-list') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>{{ __('Your Class') }}</span></a>
+        </li>
+        @endcan
+
+        @can('student')
+        <li class="nav-item {{ Nav::isRoute('classlist') }}">
+            <a class="nav-link" href="{{ route('classlist') }}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>{{ __('Your Class') }}</span></a>
         </li>

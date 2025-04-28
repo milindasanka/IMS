@@ -240,8 +240,41 @@ class StudentController extends Controller
     public function tclases()
     {
         $teacher = Teacher::where('email',auth()->user()->email)->first('id');
-        $clases = Classes::where('teacher',$teacher->id)->get();
+        $clases = Classes::where('teacher',$teacher->id??0)->get();
         return view('teacher.classlist', ['classlist' => $clases]);
+    }
+
+    public function classlist()
+    {
+        $student = Student::where('email', auth()->user()->email)->first();
+        $classIds = StudentClass::where('student_id', $student->id ?? 0)->pluck('class_id');
+        $classes = Classes::whereIn('id', $classIds)->get();
+
+        return view('student.classlist', ['classlist' => $classes]);
+    }
+
+    public function stclassview($id)
+    {
+        $student = Student::where('email', auth()->user()->email)->first();
+        $tute = [];
+        $class = Classes::where('id',$id)->first();
+        $paid = Payemnt::where('class_id', $id)
+        ->where('student_id', $student->id ?? 0)
+        ->orderBy('created_at', 'asc')
+        ->get();
+
+        $attand = Attendance::where('class_id', $id)
+            ->where('student_id', $student->id ?? 0)
+            ->orderBy('created_at', 'asc')
+            ->get();
+        $checkpay = Payemnt::where('class_id', $id)->where('student_id', $student->id ?? 0)->where('month',now()->month)->first();
+
+
+        if($checkpay !== null){
+            $tute = Tute::where('class_id', $id)->get();
+        }
+
+        return view('student.class',['class'=>$class,'paid'=>$paid,'attand'=>$attand,'tute'=>$tute]);
     }
 }
 

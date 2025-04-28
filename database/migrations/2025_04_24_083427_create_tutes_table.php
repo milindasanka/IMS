@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('class_id');
             $table->string('name');
-            $table->string('fil');
+            $table->string('file');
             $table->timestamps();
         });
     }
